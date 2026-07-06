@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Victory Temple — Home</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <!-- CRITICAL FIXED LINE BELOW: Forces mobile screens to scale elements properly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victory Temple — Home</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site">
   <div class="header-inner">
-    <a href="index.html" style="text-decoration:none;"><div class="logo">
-      <div class="logo-mark">V</div>
-      <div class="logo-text">Victory Temple<span>A Place to Belong</span></div>
-    </div></a>
+    <a href="index.html" style="text-decoration:none;">
+      <div class="logo">
+        <div class="logo-mark">V</div>
+        <div class="logo-text">Victory Temple<span>A Place to Belong</span></div>
+      </div>
+    </a>
     <nav class="primary">
       <a href="index.html">Home</a>
       <a href="plan-a-visit.html">Plan a Visit</a>
@@ -23,17 +27,19 @@
     <div class="header-cta">
       <a class="btn btn-gold" href="plan-a-visit.html">Plan Your Visit</a>
     </div>
-    <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+    <!-- Functional Hamburger Button -->
+    <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile-nav-panel">
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-panel" id="mobileMenu">
     <a href="index.html">Home</a>
-      <a href="plan-a-visit.html">Plan a Visit</a>
-      <a href="about.html">About</a>
-      <a href="ministries.html">Ministries</a>
-      <a href="contact.html#sermons">Sermons &amp; Events</a>
-      <a href="contact.html#contact">Contact</a>
+    <a href="plan-a-visit.html">Plan a Visit</a>
+    <a href="about.html">About</a>
+    <a href="ministries.html">Ministries</a>
+    <a href="contact.html#sermons">Sermons &amp; Events</a>
+    <a href="contact.html#contact">Contact</a>
     <a class="btn btn-gold" href="plan-a-visit.html">Plan Your Visit</a>
   </div>
 </header>
@@ -63,9 +69,9 @@
     <div class="two-col">
       <div>
         <div class="eyebrow">A Word From Our Pastor</div>
-        <h2 style="font-size:36px; margin-top:10px;">You Are Welcome Here</h2>
+        <h2 class="section-title-large">You Are Welcome Here</h2>
         <div class="divider"></div>
-        <p style="font-size:17px; color:#3d4b57;">Whether you grew up in church or you're walking through the doors for the very first time, our family is glad you're here. We believe every person carries purpose, and our hope is that you'll feel that truth from the moment you arrive.</p>
+        <p class="body-text">Whether you grew up in church or you're walking through the doors for the very first time, our family is glad you're here. We believe every person carries purpose, and our hope is that you'll feel that truth from the moment you arrive.</p>
         <p style="margin-top:16px; font-size:15.5px; color:#6b7680; font-weight:600;">— Pastor &amp; First Lady, Victory Temple</p>
       </div>
       <div class="photo photo-welcome" style="min-height:320px;"><div class="tag">A Warm Welcome</div></div>
@@ -83,22 +89,22 @@
     <div class="four-col">
       <div class="card">
         <div class="icon-badge">🎵</div>
-        <h3 style="font-size:19px;">Worship Style</h3>
+        <h3>Worship Style</h3>
         <p>Spirit-filled, live music with room for every generation to worship freely.</p>
       </div>
       <div class="card">
         <div class="icon-badge">👕</div>
-        <h3 style="font-size:19px;">Dress Code</h3>
+        <h3>Dress Code</h3>
         <p>Come as you are — casual or dressed up, you'll feel right at home.</p>
       </div>
       <div class="card">
         <div class="icon-badge">🧒</div>
-        <h3 style="font-size:19px;">Kids &amp; Youth</h3>
+        <h3>Kids &amp; Youth</h3>
         <p>Age-appropriate classes for children and youth during every service.</p>
       </div>
       <div class="card">
         <div class="icon-badge">🚗</div>
-        <h3 style="font-size:19px;">Parking</h3>
+        <h3>Parking</h3>
         <p>Free on-site parking with greeters ready to point you in the right direction.</p>
       </div>
     </div>
@@ -107,25 +113,25 @@
 
 <section>
   <div class="wrap">
-    <div class="two-col" style="align-items:stretch;">
-      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+    <div class="two-col alignment-stretch-mobile">
+      <div class="card service-card-inner">
         <div class="eyebrow">Join Us</div>
-        <h2 style="font-size:32px; margin-top:8px;">Service Times</h2>
+        <h2 class="section-title-med">Service Times</h2>
         <div class="divider"></div>
-        <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
-          <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(8,43,79,0.08); padding-bottom:14px;">
-            <span style="font-weight:600;">Sunday Morning Worship</span><span style="color:var(--blue); font-weight:700;">11:00 AM</span>
+        <div class="service-rows-container">
+          <div class="service-row">
+            <span class="service-name">Sunday Morning Worship</span><span class="service-time">11:00 AM</span>
           </div>
-          <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(8,43,79,0.08); padding-bottom:14px;">
-            <span style="font-weight:600;">Sunday Evening Worship</span><span style="color:var(--blue); font-weight:700;">6:00 PM</span>
+          <div class="service-row">
+            <span class="service-name">Sunday Evening Worship</span><span class="service-time">6:00 PM</span>
           </div>
-          <div style="display:flex; justify-content:space-between;">
-            <span style="font-weight:600;">Wednesday Bible Study</span><span style="color:var(--blue); font-weight:700;">7:00 PM</span>
+          <div class="service-row no-border">
+            <span class="service-name">Wednesday Bible Study</span><span class="service-time">7:00 PM</span>
           </div>
         </div>
-        <a class="btn btn-navy" style="margin-top:26px; width:fit-content;" href="https://www.google.com/maps/search/?api=1&query=238+Acts+Dr+Indianapolis+IN+46224" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-navy directions-btn" href="https://www.google.com/maps/search/?api=1&query=238+Acts+Dr+Indianapolis+IN+46224" target="_blank" rel="noopener">Get Directions</a>
       </div>
-      <div class="photo photo-sanctuary" style="min-height:100%;"><div class="tag">Sunday Worship</div></div>
+      <div class="photo photo-sanctuary custom-mobile-photo-height"><div class="tag">Sunday Worship</div></div>
     </div>
   </div>
 </section>
@@ -167,18 +173,18 @@
     <div class="video-card">
       <div class="video-thumb"><div class="play-btn"></div></div>
       <div class="video-meta">
-        <div>
+        <div class="video-text-container">
           <h3>Rooted: Standing Firm in Faith</h3>
-          <span>Pastor James Williamson · June 28, 2026</span>
+          <span class="video-subtext">Pastor James Williamson · June 28, 2026</span>
         </div>
-        <a class="btn btn-primary" href="contact.html#sermons">Watch Latest Message</a>
+        <a class="btn btn-primary video-cta-btn" href="contact.html#sermons">Watch Latest Message</a>
       </div>
     </div>
   </div>
 </section>
 
 <div class="banner blue">
-  <div class="wrap">
+  <div class="wrap banner-wrap">
     <h2>Visiting for the first time?</h2>
     <p>We would love to welcome you personally.</p>
     <a class="btn btn-gold" href="plan-a-visit.html">Plan Your Visit</a>
@@ -186,52 +192,51 @@
 </div>
 
 <div class="banner gold">
-  <div class="wrap">
+  <div class="wrap banner-wrap">
     <h2>Need Prayer?</h2>
     <p>You are not alone. Let us pray with you.</p>
-    <a class="btn btn-navy" href="contact.html#prayer">Request Prayer</a>
+    <a class="btn btn-navy" href="contact.html#contact">Submit Request</a>
   </div>
 </div>
 
-<footer class="site">
-  <div class="footer-cta">
+<footer class="site-footer">
+  <div class="wrap footer-grid">
     <div>
-      <h3>Ready to plan your visit?</h3>
-      <p style="margin-top:6px; color:rgba(255,255,255,0.85);">We'll save you a seat this Sunday.</p>
-    </div>
-    <a class="btn btn-gold" href="plan-a-visit.html">Plan Your Visit</a>
-  </div>
-  <div class="footer-grid">
-    <div>
-      <h4>Victory Temple</h4>
-      <p>238 Acts Dr.<br>Indianapolis, IN 46224</p>
-      <p>(317) 555-0148<br>info@victorytemple.church</p>
-      <div class="social-row">
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶</a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">in</a>
+      <div class="logo">
+        <div class="logo-mark">V</div>
+        <div class="logo-text">Victory Temple</div>
       </div>
+      <p class="footer-desc">A place where faith, family, and purpose grow together in Indianapolis.</p>
     </div>
     <div>
       <h4>Quick Links</h4>
-      <a href="plan-a-visit.html">Plan a Visit</a>
-      <a href="about.html">About Us</a>
-      <a href="ministries.html">Ministries</a>
-      <a href="contact.html#sermons">Sermons &amp; Events</a>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="plan-a-visit.html">Plan a Visit</a>
+        <a href="about.html">About Us</a>
+        <a href="ministries.html">Ministries</a>
+      </div>
     </div>
     <div>
-      <h4>Service Times</h4>
-      <p>Sunday — 11:00 AM &amp; 6:00 PM</p>
-      <p>Wednesday — 7:00 PM</p>
-    </div>
-    <div>
-      <h4>We're Here for You</h4>
-      <a href="contact.html#prayer">Request Prayer</a>
-      <a href="contact.html#give">Give Online</a>
-      <a href="contact.html#contact">Contact Us</a>
+      <h4>Service Info</h4>
+      <p class="footer-info">Sundays at 11:00 AM &amp; 6:00 PM</p>
+      <p class="footer-info">Wednesdays at 7:00 PM</p>
+      <p class="footer-info">238 Acts Dr, Indianapolis, IN</p>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Victory Temple A Place to Belong. All rights reserved.</div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Victory Temple. All rights reserved.</p>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  function toggleMobileMenu() {
+    const panel = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.hamburger-btn');
+    const isOpen = panel.classList.toggle('active');
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.classList.toggle('open');
+  }
+</script>
 </body>
 </html>

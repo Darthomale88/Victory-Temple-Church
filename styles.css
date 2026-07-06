@@ -507,3 +507,190 @@ footer.site{ background:var(--navy); color:rgba(255,255,255,0.85); padding-top:8
     linear-gradient(180deg, rgba(8,43,79,0.18) 0%, rgba(8,43,79,0.74) 100%),
     url('assets/images/sermon.jpg') center/cover no-repeat;
 }
+/* ==========================================================================
+   Responsive Architecture Extensions
+   ========================================================================== */
+
+/* Cleanup Rules for Inline Styled Classes */
+.section-title-large { font-size: 36px; margin-top: 10px; }
+.section-title-med { font-size: 32px; margin-top: 8px; }
+.body-text { font-size: 17px; color: #3d4b57; }
+.service-card-inner { display: flex; flex-direction: column; justify-content: center; }
+.service-rows-container { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+.service-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(8,43,79,0.08); padding-bottom: 14px; }
+.service-row.no-border { border-bottom: none; }
+.service-name { font-weight: 600; }
+.service-time { color: var(--blue); font-weight: 700; }
+.directions-btn { margin-top: 26px; width: fit-content; }
+.video-text-container { display: flex; flex-direction: column; }
+.video-subtext { color: #6b7680; font-size: 14px; margin-top: 4px; }
+
+/* Interactive Hamburger & Nav Structures */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 100;
+}
+.hamburger-btn span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-nav-panel {
+  display: none;
+  position: absolute;
+  top: 88px; left: 0; right: 0;
+  background: var(--navy);
+  flex-direction: column;
+  padding: 24px 40px;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.mobile-nav-panel.active { display: flex; }
+.mobile-nav-panel a { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.9); }
+.mobile-nav-panel .btn { text-align: center; justify-content: center; margin-top: 10px; }
+
+.mobile-sticky-visit {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding: 16px;
+  font-weight: 700;
+  font-size: 15px;
+  z-index: 40;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+}
+
+/* Video Card & Banner Foundations */
+.video-card {
+  display: flex;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.video-thumb {
+  width: 45%; min-height: 240px;
+  background: #111 linear-gradient(135deg, var(--navy), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.play-btn {
+  width: 56px; height: 56px; background: var(--white); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.play-btn::after {
+  content: ''; border-style: solid; border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent var(--navy); margin-left: 4px;
+}
+.video-meta { padding: 32px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+.video-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--navy); }
+.video-cta-btn { width: fit-content; }
+
+.banner { padding: 64px 0; text-align: center; color: var(--white); }
+.banner.blue { background: var(--navy); }
+.banner.gold { background: var(--gold); color: var(--navy); }
+.banner h2 { font-size: 36px; margin-bottom: 8px; color: inherit; }
+.banner p { font-size: 17px; margin-bottom: 24px; opacity: 0.9; }
+
+/* Structural Tiles */
+.tile { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.tile-body { padding: 24px; }
+.tile-body h3 { font-size: 20px; color: var(--navy); }
+.tile-body p { margin-top: 8px; font-size: 15px; color: #4a5561; line-height: 1.5; }
+
+/* Footer Elements */
+.site-footer { background: #051b33; color: rgba(255,255,255,0.8); padding: 64px 0 32px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+.footer-desc { margin-top: 16px; font-size: 15px; line-height: 1.6; max-width: 320px; }
+.site-footer h4 { color: var(--white); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a:hover { color: var(--gold); }
+.footer-info { font-size: 15px; margin-bottom: 8px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 48px; padding-top: 24px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.4); }
+
+/* ==========================================================================
+   Media Queries — Tablet Breakpoint (992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .three-col { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .four-col { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .hero h1 { font-size: 46px; }
+}
+
+/* ==========================================================================
+   Media Queries — Mobile Breakpoint (768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Layout Padding Adjustments */
+  section { padding: 56px 0; }
+  section.tight { padding: 48px 0; }
+  .wrap { padding: 0 24px; }
+  
+  /* Flex & Grid Destructuring (Forces vertical stacking) */
+  .two-col, .three-col, .four-col, .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 32px; 
+  }
+  
+  /* Force specific layouts like service sections to display sequentially */
+  .alignment-stretch-mobile { align-items: initial; }
+  .custom-mobile-photo-height { min-height: 240px !important; order: -1; }
+  
+  /* Typography Scaling Improvements */
+  .hero h1 { font-size: 34px; line-height: 1.15; }
+  .hero p.sub { font-size: 16px; margin-top: 14px; }
+  .section-head h2 { font-size: 28px; }
+  .section-title-large { font-size: 28px; }
+  .section-title-med { font-size: 26px; }
+  .section-head { margin-bottom: 36px; }
+  
+  /* Buttons & CTA adaptations */
+  .hero-ctas { width: 100%; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .hero-facts { margin-top: 36px; gap: 8px; }
+  .fact-pill { width: 100%; font-size: 13.5px; padding: 12px 16px; }
+  
+  /* Header Adjustments */
+  nav.primary, .header-cta { display: none; }
+  .hamburger-btn { display: flex; }
+  .header-inner { height: 72px; padding: 0 24px; }
+  .mobile-nav-panel { top: 72px; padding: 24px; }
+  .mobile-sticky-visit { display: block; }
+  
+  /* Card Padding Optimization */
+  .card { padding: 24px; }
+  
+  /* Video Card Unstacking */
+  .video-card { flex-direction: column; }
+  .video-thumb { width: 100%; min-height: 180px; }
+  .video-meta { padding: 24px; }
+  .video-meta h3 { font-size: 22px; }
+  .video-cta-btn { width: 100%; text-align: center; justify-content: center; }
+  
+  /* Banners Optimization */
+  .banner { padding: 48px 0; }
+  .banner h2 { font-size: 26px; }
+  .banner p { font-size: 15px; }
+  .banner-wrap .btn { width: 100%; justify-content: center; }
+  
+  /* Footers Correction */
+  .footer-desc { max-width: 100%; }
+}
